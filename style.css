@@ -1,0 +1,238 @@
+/* Общие стили (остаются без изменений) */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.header-container, .main-container{
+    display: flex;
+    flex-direction: column;
+}
+.header-container{
+  flex-direction: row;
+  justify-content: space-between;
+    align-items: center;
+}
+
+/* Header */
+header {
+    background-color: #222;
+    padding: 1rem 0;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Логотип*/
+.logo-link {
+  display: flex;
+     align-items: center;
+}
+.logo-link img {
+    max-height: 150px;
+}
+/* Меню*/
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 0.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ccc;
+    padding: 0.5rem;
+        text-transform: uppercase;
+        font-size: 0.9em;
+       transition: color 0.3s ease;
+
+}
+
+nav a:hover {
+    color: #fff;
+}
+/* User Menu Toggle Button */
+
+/* MAIN*/
+.main-container{
+  margin-top: 2rem;
+}
+main h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-size: 2em;
+    font-weight: bold;
+     text-transform: uppercase;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.product-card {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.product-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.1em;
+}
+
+.price {
+    font-weight: bold;
+    color: #ffc107;
+    margin-bottom: 0.5rem;
+}
+
+.product-card button {
+    background-color: #ffc107;
+    color: #222;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+    background-color: #e0a800;
+}
+.product-card{
+  position: relative;
+}
+.product-toggle {
+    display: none;
+}
+/* Стили для кнопки "Подробнее" */
+.product-button{
+    background-color: #ffc107;
+    color: #222;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+      display: inline-block;
+}
+/* Стили для product-info */
+.product-info {
+    display: none; /* Скрыт по умолчанию */
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #444;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 0.9em;
+       position: absolute;
+    top: 100%;
+    left: 0;
+   width: 100%;
+    box-sizing: border-box;
+}
+/* Стиль для развернутой информации*/
+.product-toggle:checked ~ .product-info {
+     display: block;
+}
+#component-details,
+#device-details {
+    padding: 2rem 0;
+}
+
+#component-details h2,
+#device-details h2 {
+    margin-bottom: 1rem;
+}
+#component-details h4,
+#device-details h4{
+    margin-bottom: 10px;
+}
+#component-details .product-grid,
+#device-details .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+#component-details .product-card,
+#device-details .product-card {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+#component-details .product-card img,
+#device-details .product-card img {
+     max-width: 100%;
+    height: auto;
+     border-radius: 5px;
+     margin-bottom: 1rem;
+}
+
+#component-details .product-card h3,
+#device-details .product-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+#component-details .product-card p,
+#device-details .product-card p {
+    font-size: 0.9em;
+    line-height: 1.5;
+     margin-bottom: 1rem;
+}
+/* Media query для мобильных устройств */
+@media (max-width: 768px) {
+      .container {
+        width: 95%;
+         padding: 0.5rem 0;
+    }
+    .header-container{
+      flex-direction: column;
+    }
+     nav{
+         flex-direction: column;
+         align-items: flex-end;
+     }
+     nav a{
+         padding: 0.3rem 0.5rem;
+          margin-bottom: 0.3rem;
+     }
+    .logo-link img{
+      max-height: 100px;
+    }
+    .product-grid {
+          grid-template-columns: 1fr;
+      }
+}
